@@ -6,6 +6,7 @@ import com.saggezza.psr.dto.models.AssigneeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class AssigneeController implements IController<AssigneeDTO>{
 
     @Override
     @ResponseBody
-    @RequestMapping("/getAll")
+    @RequestMapping(method = RequestMethod.GET, value = "/getAll")
     public List<AssigneeDTO> getAll() {
         List<AssigneeMaster> assigneeMasterList = assigneeDAO.findAll();
         return assigneeMasterList.stream().map(AssigneeDTO::fromEntity).collect(Collectors.toList());

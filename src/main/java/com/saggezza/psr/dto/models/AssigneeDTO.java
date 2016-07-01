@@ -23,6 +23,4 @@ public class AssigneeDTO extends BaseDTO {
         assigneeMaster.setName(assigneeDTO.getName());
         return assigneeMaster;
     }
-
-
 }

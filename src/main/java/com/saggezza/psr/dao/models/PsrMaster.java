@@ -73,7 +73,7 @@ public class PsrMaster implements Serializable {
 	private PsrTypeMaster psrTypeMaster;
 
 	//bi-directional many-to-one association to PsrTasksDuration
-	@OneToMany(mappedBy="psrMaster")
+	@OneToMany(mappedBy="psrMaster", fetch = FetchType.EAGER)
 	private List<PsrTasksDuration> psrTasksDurations;
 
 	public PsrMaster() {
